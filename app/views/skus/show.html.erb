@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sku.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sku.description %>
+</p>
+
+<p>
+  <strong>Sku code:</strong>
+  <%= @sku.sku_code %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @sku.manufacturer.name %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @sku.category.name %>
+</p>
+
+<%= link_to 'Edit', edit_sku_path(@sku) %> |
+<%= link_to 'Back', skus_path %>

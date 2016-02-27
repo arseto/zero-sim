@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  registered_date: 2016-02-27
+  status: 1
+  identity_type_id: 
+  identity_no: MyString
+
+two:
+  name: MyString
+  registered_date: 2016-02-27
+  status: 1
+  identity_type_id: 
+  identity_no: MyString
