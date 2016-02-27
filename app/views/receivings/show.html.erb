@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Doc no:</strong>
+  <%= @receiving.doc_no %>
+</p>
+
+<p>
+  <strong>Doc Status:</strong>
+  <%= @receiving.doc_status.name %>
+</p>
+
+<p>
+  <strong>Receiving date:</strong>
+  <%= @receiving.receiving_date %>
+</p>
+
+<p>
+  <strong>Ref doc no:</strong>
+  <%= @receiving.ref_doc_no %>
+</p>
+
+<%= link_to 'Edit', edit_receiving_path(@receiving) %> |
+<%= link_to 'Back', receivings_path %>

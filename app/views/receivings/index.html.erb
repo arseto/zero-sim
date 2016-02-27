@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Receivings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doc no</th>
+      <th>Doc Status</th>
+      <th>Receiving date</th>
+      <th>Ref doc no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receivings.each do |receiving| %>
+      <tr>
+        <td><%= receiving.doc_no %></td>
+        <td><%= receiving.doc_status.name %></td>
+        <td><%= receiving.receiving_date %></td>
+        <td><%= receiving.ref_doc_no %></td>
+        <td><%= link_to 'Show', receiving %></td>
+        <td><%= link_to 'Edit', edit_receiving_path(receiving) %></td>
+        <td><%= link_to 'Destroy', receiving, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receiving', new_receiving_path %>

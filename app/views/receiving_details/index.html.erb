@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Receiving Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Receiving</th>
+      <th>Sku</th>
+      <th>Qty</th>
+      <th>Unit price</th>
+      <th>Subtotal price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receiving_details.each do |receiving_detail| %>
+      <tr>
+        <td><%= receiving_detail.receiving %></td>
+        <td><%= receiving_detail.sku %></td>
+        <td><%= receiving_detail.qty %></td>
+        <td><%= receiving_detail.unit_price %></td>
+        <td><%= receiving_detail.subtotal_price %></td>
+        <td><%= link_to 'Show', receiving_detail %></td>
+        <td><%= link_to 'Edit', edit_receiving_detail_path(receiving_detail) %></td>
+        <td><%= link_to 'Destroy', receiving_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receiving detail', new_receiving_detail_path %>

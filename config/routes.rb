@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :receiving_details
+  resources :doc_statuses
+  resources :receivings
   resources :user_borrowers
   resources :loan_types
   resources :identity_types

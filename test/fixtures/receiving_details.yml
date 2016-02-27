@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receiving_id: 
+  sku_id: 
+  qty: 1
+  unit_price: 9.99
+  subtotal_price: 9.99
+
+two:
+  receiving_id: 
+  sku_id: 
+  qty: 1
+  unit_price: 9.99
+  subtotal_price: 9.99

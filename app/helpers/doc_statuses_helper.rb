@@ -1,0 +1,2 @@
+module DocStatusesHelper
+end

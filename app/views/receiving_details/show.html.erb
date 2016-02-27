@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Receiving:</strong>
+  <%= @receiving_detail.receiving %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @receiving_detail.sku %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @receiving_detail.qty %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @receiving_detail.unit_price %>
+</p>
+
+<p>
+  <strong>Subtotal price:</strong>
+  <%= @receiving_detail.subtotal_price %>
+</p>
+
+<%= link_to 'Edit', edit_receiving_detail_path(@receiving_detail) %> |
+<%= link_to 'Back', receiving_details_path %>

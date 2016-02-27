@@ -1,0 +1,63 @@
+<%= form_for(@receiving) do |f| %>
+  <% if @receiving.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@receiving.errors.count, "error") %> prohibited this receiving from being saved:</h2>
+
+      <ul>
+      <% @receiving.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :doc_no %><br>
+    <%= f.text_field :doc_no %>
+  </div>
+  <div class="field">
+    <%= f.label :receiving_date %><br>
+    <%= f.date_select :receiving_date %>
+  </div>
+  <div class="field">
+    <%= f.label :ref_doc_no %><br>
+    <%= f.text_field :ref_doc_no %>
+  </div>
+  <div class="field">
+    <%= f.label :doc_status_id %><br>
+    <%= f.collection_select :doc_status_id, DocStatus.all, :id, :name, :selected => @receiving.doc_status %>
+  </div>
+  <% if !@receiving.new_record? %>
+    <div class="detail-action">
+        <p>Details</p>
+        <table>
+        <thead>
+            <tr>
+            <th>Sku</th>
+            <th>Qty</th>
+            <th>Unit price</th>
+            <th>Subtotal price</th>
+            <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @receiving.receiving_detail.each do |receiving_detail| %>
+            <tr>
+                <td><%= receiving_detail.sku.name %></td>
+                <td><%= receiving_detail.qty %></td>
+                <td><%= receiving_detail.unit_price %></td>
+                <td><%= receiving_detail.subtotal_price %></td>
+                <td><%= link_to 'Edit', edit_receiving_detail_path(receiving_detail) %></td>
+                <td><%= link_to 'Destroy', receiving_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Receiving detail', new_receiving_detail_path %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

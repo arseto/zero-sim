@@ -1,0 +1,2 @@
+module ReceivingDetailsHelper
+end
